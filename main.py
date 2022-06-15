@@ -12,6 +12,12 @@ class Range:
     typeRight = ''
 
     # Methods
+    
+    def __init__(self, valueLeft, typeLeft, valueRight, typeRight):
+        self.valueLeft = valueLeft
+        self.typeLeft = typeLeft
+        self.valueRight = valueRight
+        self.typeRight = typeRight
 
     # Integer range contains
     def IntegerRangeContains(range1, numbers):
