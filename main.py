@@ -1,7 +1,38 @@
 class Range:
     
-    def __init__(self, *value):
-        self.range = value
-        
-    def contains(range):
-        return True
+    # Attributes
+    newRange = ''
+
+    # Constructor
+    def __init__(self, newRange):
+        self.newRange = newRange
+
+    # Methods
+
+    #
+    def ConvertRange(R1):
+        if R1.newRange[0] == '[' and R1.newRange[-1] == ']':
+            result = range(int(R1[1:].newRange.split(',')[0]), int(R1[:-1].newRange.split(',')[1]) + 1)
+            return result
+
+        elif R1.newRange[0] == '[' and R1.newRange[-1] == ')':
+            result = range(int(R1[1:].newRange.split(',')[0]), int(R1[:-1].newRange.split(',')[1]))
+            return result
+
+        elif R1.newRange[0] == '(' and R1.newRange[-1] == ']':
+            result = range(int(R1[1:].newRange.split(',')[0]) + 1, int(R1[:-1].newRange.split(',')[1]) + 1)
+            return result
+
+        elif R1.newRange[0] == '(' and R1.newRange[-1] == ')':
+            result = range(int(R1[1:].newRange.split(',')[0]) + 1, int(R1[:-1].newRange.split(',')[1]))
+            return result
+
+    # Integer Range Contains
+    def contains(R1, *numbers):
+        convertedR1 = R1.ConvertRange()
+        result = True
+        for number in numbers:
+            if number < convertedR1.start or number >= convertedR1.stop:
+                result = False
+                break
+        return result
