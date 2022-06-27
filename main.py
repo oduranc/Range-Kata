@@ -63,8 +63,18 @@ class Range:
         convertedR1 = R1.ConvertRange()
         convertedR2 = R2.ConvertRange()
         
+        result = False
         for num in convertedR2:
-            if num < convertedR1.start or num >= convertedR1.stop:
-                return False
-        
-        return True
+            if num >= convertedR1.start and num < convertedR1.stop:
+                result = True
+        return result
+
+    # Equals
+    def equals(R1, R2):
+        convertedR1 = R1.ConvertRange()
+        convertedR2 = R2.ConvertRange()
+
+        if convertedR1 == convertedR2:
+            return True
+        elif convertedR1 == convertedR2:
+            return False

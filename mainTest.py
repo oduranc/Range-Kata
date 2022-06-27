@@ -54,9 +54,21 @@ class mainTest(unittest.TestCase):
         r2 = Range('[2, 10)')
         self.assertTrue(r2.overlapsRange(Range('[3, 5)')))
 
-        r3 = Range('3, 5')
+        r3 = Range('[3, 5)')
         self.assertTrue(r3.overlapsRange(r3))
-        self.assertTrue(r3.overlapsRange(Range('[2, 10)')))
+        r4 = Range('[2, 10)')
+        self.assertTrue(r3.overlapsRange(r4))
+
+    def test_equals(self):
+        r1 = Range('[3, 5)')
+        r2 = Range('[2, 10)')
+        r3 = Range('[2, 5)')
+        r4 = Range('[3, 10)')
+
+        self.assertTrue(r1.equals(r1))
+        self.assertFalse(r3.equals(r4))
+        self.assertFalse(r2.equals(r1))
+        self.assertFalse(r1.equals(r2))
         
     
 if __name__ == '__main__':
