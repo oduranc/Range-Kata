@@ -13,6 +13,10 @@ class mainTest(unittest.TestCase):
         self.assertTrue(r1.contains(2, 4))
 
         self.assertFalse(r1.contains(-1, 1, 6, 10))
+        
+    def test_getAllPoints(self):
+        r1 = Range('[2, 6)')
+        self.assertEqual(r1.getAllPoints(), [2, 3, 4, 5])
     
 if __name__ == '__main__':
     unittest.main()
