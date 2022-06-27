@@ -42,3 +42,14 @@ class Range:
         convertedR1 = R1.ConvertRange()
         allPoints = list(convertedR1)
         return allPoints
+    
+    # Contais Range
+    def containsRange(R1, values):
+        convertedR1 = R1.ConvertRange()
+        R2 = Range(values)
+        convertedR2 = R2.ConvertRange()
+        
+        if convertedR2.start < convertedR1.start or convertedR2.stop > convertedR1.stop:
+            return False
+                
+        return True 

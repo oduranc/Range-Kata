@@ -17,6 +17,19 @@ class mainTest(unittest.TestCase):
     def test_getAllPoints(self):
         r1 = Range('[2, 6)')
         self.assertEqual(r1.getAllPoints(), [2, 3, 4, 5])
+        
+    def test_containsRange(self):
+        r1 = Range('[2,5)')
+        self.assertFalse(r1.containsRange('[7,10)'))
+        
+        self.assertFalse(r1.containsRange('[3,10)'))
+        
+        self.assertFalse(r1.containsRange('[2,10)'))
+        
+        self.assertTrue(r1.containsRange('[3,5]'))
+        
+        self.assertTrue(r1.containsRange('[3,5)'))
+        
     
 if __name__ == '__main__':
     unittest.main()
