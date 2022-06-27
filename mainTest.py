@@ -46,7 +46,9 @@ class mainTest(unittest.TestCase):
 
     def test_overlapsRange(self):
         r1 = Range('[2, 5)')
-        self.assertFalse(r1.overlapsRange(Range('[7, 10)')))
+        
+        paramRange = Range('[7, 10)')
+        self.assertFalse(r1.overlapsRange(paramRange))
         self.assertTrue(r1.overlapsRange(Range('[3, 10)')))
 
         r2 = Range('[2, 10)')

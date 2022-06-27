@@ -62,3 +62,9 @@ class Range:
     def overlapsRange(R1, R2):
         convertedR1 = R1.ConvertRange()
         convertedR2 = R2.ConvertRange()
+        
+        for num in convertedR2:
+            if num < convertedR1.start or num >= convertedR1.stop:
+                return False
+        
+        return True
