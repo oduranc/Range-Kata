@@ -1,15 +1,12 @@
-from unittest import result
-from main import LimitTypes, Range
-
-
+from unicodedata import name
 import unittest
+from main import Range
 
-class RangeTest(unittest.TestCase):
+class mainTest(unittest.TestCase):
     
-    def With_Two_and_Four_Is_True(self):
-        rangeObject = Range(2, LimitTypes.closeLimit, 6, LimitTypes.openLimit)
-        result = rangeObject.IntegerRangeContains(rangeObject, [2, 4])
-        self.assertTrue(result)
-        
+    def test_contains():
+        r1 = Range('[2,6)')
+        assert r1.contains('[2,4]') == True
+    
 if __name__ == '__main__':
     unittest.main()
