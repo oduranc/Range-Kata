@@ -1,6 +1,6 @@
 from unicodedata import name
 import unittest
-from main import Range
+from src.Range_oduranc import Range
 
 class mainTest(unittest.TestCase):
     
